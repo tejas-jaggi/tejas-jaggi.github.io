@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tejas Jaggi — Data & Analytics Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #06080f;
+      --surface: #0b0f1a;
+      --card: #0e1220;
+      --border: #1a2236;
+      --accent: #4f9eff;
+      --accent2: #a78bfa;
+      --accent3: #34d399;
+      --text: #e2e8f5;
+      --muted: #4a5a78;
+      --muted2: #8896b0;
+    }
+    html { scroll-behavior: smooth; }
+    body { background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none; }
+    .cursor { width:10px;height:10px;background:var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:screen; }
+    .cursor-ring { width:32px;height:32px;border:1px solid rgba(79,158,255,.4);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%); }
+    body::after { content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(79,158,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(79,158,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none; }
+
+    nav { position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3.5rem;background:rgba(6,8,15,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);z-index:500; }
+    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;letter-spacing:-.5px; }
+    .nav-logo span { color:var(--accent); }
+    .nav-links { display:flex;gap:2rem;list-style:none; }
+    .nav-links a { color:var(--muted2);text-decoration:none;font-size:.78rem;letter-spacing:.06em;transition:color .2s;font-family:'DM Mono',monospace; }
+    .nav-links a:hover { color:var(--accent); }
+    .nav-badge { background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.3);color:var(--accent3);padding:.3rem .8rem;border-radius:20px;font-size:.68rem;letter-spacing:.1em;font-family:'DM Mono',monospace;display:flex;align-items:center;gap:.4rem; }
+    .dot-pulse { width:6px;height:6px;background:var(--accent3);border-radius:50%;flex-shrink:0;animation:pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.8)} }
+
+    #hero { min-height:100vh;display:flex;align-items:center;padding:8rem 3.5rem 4rem;position:relative;overflow:hidden; }
+    .hero-orb1 { position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(79,158,255,.06) 0%,transparent 70%);top:50%;left:40%;transform:translate(-50%,-50%);pointer-events:none; }
+    .hero-orb2 { position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(167,139,250,.05) 0%,transparent 70%);bottom:5%;right:5%;pointer-events:none; }
+    .hero-content { max-width:860px;position:relative;z-index:2; }
+    .hero-chip { display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--border);background:var(--card);padding:.4rem 1rem;border-radius:3px;font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted2);letter-spacing:.1em;margin-bottom:1.8rem;opacity:0;animation:fadeUp .6s .1s forwards; }
+    .hero-chip .ac { color:var(--accent); }
+    h1.hero-name { font-family:'Syne',sans-serif;font-size:clamp(3rem,8vw,6.5rem);font-weight:800;line-height:.95;letter-spacing:-2px;margin-bottom:.6rem;opacity:0;animation:fadeUp .7s .3s forwards; }
+    .hero-name .blue { color:var(--accent); }
+    .hero-role { font-family:'Syne',sans-serif;font-size:clamp(1rem,2.5vw,1.5rem);font-weight:700;color:var(--muted2);letter-spacing:-.5px;margin-bottom:1.5rem;opacity:0;animation:fadeUp .7s .45s forwards; }
+    .hero-role em { color:var(--accent2);font-style:normal; }
+    .hero-desc { font-size:.95rem;color:var(--muted2);max-width:560px;line-height:1.8;font-weight:300;margin-bottom:2.2rem;opacity:0;animation:fadeUp .7s .6s forwards; }
+    .hero-desc strong { color:var(--text);font-weight:500; }
+    .hero-cta { display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .7s .75s forwards; }
+    .btn { display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.6rem;border-radius:3px;font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.05em;text-decoration:none;transition:all .25s;cursor:none; }
+    .btn-primary { background:var(--accent);color:#06080f;border:1px solid var(--accent);font-weight:500; }
+    .btn-primary:hover { background:transparent;color:var(--accent);box-shadow:0 0 24px rgba(79,158,255,.2); }
+    .btn-secondary { background:transparent;color:var(--text);border:1px solid var(--border); }
+    .btn-secondary:hover { border-color:var(--accent2);color:var(--accent2); }
+
+    .targets-bar { overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.8rem 0;background:var(--surface); }
+    .targets-scroll { display:flex;gap:2.5rem;animation:marquee 24s linear infinite;white-space:nowrap; }
+    .targets-scroll span { font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted); }
+    .targets-scroll .pip { color:var(--accent); }
+
+    section { padding:6rem 3.5rem;position:relative;z-index:2; }
+    .eyebrow { font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;display:flex;align-items:center;gap:.7rem; }
+    .eyebrow::before { content:'';width:18px;height:1px;background:var(--accent); }
+    .section-h { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:2.8rem; }
+
+    #about { background:var(--surface); }
+    .about-grid { display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:start;max-width:1500px;width:90%;margin:0 auto; }
+    .about-text p { color:var(--muted2);line-height:1.85;font-size:.88rem;font-weight:300;margin-bottom:1rem; }
+    .about-text p strong { color:var(--text);font-weight:500; }
+    .uiuc-badge { display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--border);background:var(--card);padding:.5rem 1rem;border-radius:3px;margin-top:.5rem;font-family:'DM Mono',monospace;font-size:.72rem;color:var(--muted2); }
+    .uiuc-i { color:#e8782c;font-weight:700; }
+    .about-right { display:flex;flex-direction:column;gap:1.2rem; }
+    .stat-card { border:1px solid var(--border);padding:1.4rem 1.6rem;background:var(--card);position:relative;overflow:hidden;transition:border-color .3s,transform .3s; }
+    .stat-card::before { content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent); }
+    .stat-card:hover { border-color:var(--accent);transform:translateX(4px); }
+    .stat-num { font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--accent);line-height:1; }
+    .stat-label { font-size:.7rem;color:var(--muted2);letter-spacing:.08em;text-transform:uppercase;margin-top:.25rem;font-family:'DM Mono',monospace; }
+
+    #skills { background:var(--bg); }
+    .skills-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.2rem;max-width:1500px;width:90%;margin:0 auto; }
+    .skill-card { border:1px solid var(--border);padding:1.6rem;background:var(--card);transition:border-color .3s,transform .3s; }
+    .skill-card:hover { border-color:var(--accent);transform:translateY(-3px); }
+    .skill-head { display:flex;align-items:center;gap:.6rem;font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;margin-bottom:1.1rem;color:var(--text); }
+    .pill-wrap { display:flex;flex-wrap:wrap;gap:.4rem; }
+    .pill { padding:.28rem .65rem;border-radius:2px;font-family:'DM Mono',monospace;font-size:.67rem;letter-spacing:.04em; }
+    .pb { background:rgba(79,158,255,.08);border:1px solid rgba(79,158,255,.2);color:var(--accent); }
+    .pp { background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.2);color:var(--accent2); }
+    .pg { background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);color:var(--accent3); }
+
+    #projects { background:var(--surface); }
+    .projects-list { display:flex;flex-direction:column;gap:1.5rem;max-width:1500px;width:90%;margin:0 auto; }
+    .project-card { border:1px solid var(--border);background:var(--card);padding:2.2rem 2.5rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start; }
+    .project-card::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent),var(--accent2));transform:scaleY(0);transition:transform .4s;transform-origin:top; }
+    .project-card:hover { border-color:rgba(79,158,255,.25);transform:translateX(4px); }
+    .project-card:hover::before { transform:scaleY(1); }
+    .proj-num { font-family:'DM Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.15em;margin-bottom:.7rem; }
+    .proj-name { font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:.5rem;color:var(--text); }
+    .proj-domain { display:inline-flex;align-items:center;gap:.4rem;font-family:'DM Mono',monospace;font-size:.65rem;color:var(--accent2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem; }
+    .proj-desc { font-size:.85rem;color:var(--muted2);line-height:1.8;font-weight:300;margin-bottom:1.2rem; }
+    .proj-highlights { list-style:none;margin-bottom:1.2rem; }
+    .proj-highlights li { font-size:.8rem;color:var(--muted2);line-height:1.7;font-weight:300;padding-left:1.2rem;position:relative;margin-bottom:.3rem; }
+    .proj-highlights li::before { content:'→';position:absolute;left:0;color:var(--accent3);font-size:.75rem; }
+    .proj-stack { display:flex;flex-wrap:wrap;gap:.4rem; }
+    .proj-tag { padding:.25rem .6rem;background:rgba(79,158,255,.06);border:1px solid rgba(79,158,255,.15);border-radius:2px;font-family:'DM Mono',monospace;font-size:.65rem;color:var(--accent); }
+    .proj-links { display:flex;flex-direction:column;gap:.7rem;min-width:120px; }
+    .proj-link { display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.6rem 1rem;border:1px solid var(--border);color:var(--muted2);text-decoration:none;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.06em;transition:all .2s;white-space:nowrap; }
+    .proj-link:hover { border-color:var(--accent);color:var(--accent); }
+    .proj-link.dim { opacity:.35;pointer-events:none; }
+    .project-card.soon { opacity:.5;border-style:dashed; }
+    .coming-tag { font-family:'DM Mono',monospace;font-size:.62rem;color:var(--accent2);letter-spacing:.1em;border:1px solid rgba(167,139,250,.3);background:rgba(167,139,250,.06);padding:.2rem .6rem;border-radius:2px;display:inline-block;margin-bottom:.6rem; }
+    .project-img{
+width:100%;
+border-radius:10px;
+margin:15px 0;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+    #contact { background:var(--bg); }
+    .contact-box { max-width:780px;border:1px solid var(--border);background:var(--card);padding:3rem;position:relative;overflow:hidden; }
+    .contact-box::after { content:'';position:absolute;top:-80px;right:-80px;width:240px;height:240px;background:radial-gradient(circle,rgba(79,158,255,.07),transparent 70%);pointer-events:none; }
+    .contact-sub { font-size:.85rem;color:var(--muted2);line-height:1.8;font-weight:300;margin-bottom:2rem;max-width:520px; }
+    .contact-sub strong { color:var(--text);font-weight:500; }
+    .c-links { display:flex;flex-wrap:wrap;gap:.8rem; }
+    .c-link { display:inline-flex;align-items:center;gap:.6rem;padding:.7rem 1.3rem;border:1px solid var(--border);color:var(--text);text-decoration:none;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.06em;transition:all .25s;background:var(--surface); }
+    .c-link:hover { border-color:var(--accent);color:var(--accent);background:rgba(79,158,255,.04); }
+    .c-link svg { width:14px;height:14px;flex-shrink:0; }
+
+    footer { border-top:1px solid var(--border);padding:2rem 3.5rem;display:flex;justify-content:space-between;align-items:center;background:var(--surface);position:relative;z-index:2; }
+    footer p { font-size:.7rem;color:var(--muted);font-family:'DM Mono',monospace; }
+    footer span { color:var(--accent); }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .reveal { opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease; }
+    .reveal.visible { opacity:1;transform:translateY(0); }
+    .d1 { transition-delay:.1s; } .d2 { transition-delay:.2s; } .d3 { transition-delay:.3s; }
+
+    @media(max-width:768px){
+      nav { padding:1rem 1.5rem; }
+      .nav-links { display:none; }
+      section { padding:4rem 1.5rem; }
+      #hero { padding:7rem 1.5rem 3rem; }
+      .about-grid { grid-template-columns:1fr; }
+      .project-card { grid-template-columns:1fr; }
+      .proj-links { flex-direction:row; }
+      footer { flex-direction:column;gap:.5rem;text-align:center; }
+      .contact-box { padding:2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav>
+  <a href="#hero" class="nav-logo">TJ<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-badge"><span class="dot-pulse"></span>Open to Internships</div>
+</nav>
+
+<section id="hero">
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-content">
+    <div class="hero-chip">📍 University of Illinois Urbana-Champaign &nbsp;·&nbsp; <span class="ac">MSIM '27</span></div>
+    <h1 class="hero-name">Tejas<br/><span class="blue">Jaggi Portfolio.</span></h1>
+    <p class="hero-role">Data Analyst · Data Scientist · <em>Data Engineer</em></p>
+    <p class="hero-desc">
+      I turn <strong>messy data into clear decisions.</strong>
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">↓ View Projects</a>
+      <a href="https://www.linkedin.com/in/tejas-jaggi-a55134221" target="_blank" class="btn btn-secondary">LinkedIn ↗</a>
+      <a href="https://github.com/tejas-jaggi" target="_blank" class="btn btn-secondary">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<div class="targets-bar">
+  <div class="targets-scroll">
+    <span>Data Analyst</span><span class="pip">◆</span>
+    <span>Data Scientist</span><span class="pip">◆</span>
+    <span>Data Engineer</span><span class="pip">◆</span>
+    <span>Business Analyst</span><span class="pip">◆</span>
+    <span>Financial Analyst</span><span class="pip">◆</span>
+    <span>Procurement Analyst</span><span class="pip">◆</span>
+    <span>Python · SQL · Power BI · Tableau · ML · XGBoost</span><span class="pip">◆</span>
+    <span>Data Analyst</span><span class="pip">◆</span>
+    <span>Data Scientist</span><span class="pip">◆</span>
+    <span>Data Engineer</span><span class="pip">◆</span>
+    <span>Business Analyst</span><span class="pip">◆</span>
+    <span>Financial Analyst</span><span class="pip">◆</span>
+    <span>Procurement Analyst</span><span class="pip">◆</span>
+    <span>Python · SQL · Power BI · Tableau · ML · XGBoost</span><span class="pip">◆</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <div class="eyebrow">About Me</div>
+      <h2 class="section-h">Analyst. Builder.<br/>Problem Solver.</h2>
+      <p>I'm <strong>Tejas Jaggi</strong>, a grad student at UIUC pursuing my Master's in Information Management. My work sits at the intersection of <strong>data engineering, machine learning, and business intelligence</strong> — I don't just build models, I build systems that go from raw data all the way to decision-ready dashboards.</p>
+      <p>My projects span aerospace analytics, supply chain risk, and technology commercialization — not because I chase novelty, but because I believe <strong>data skills transfer across every domain</strong>. Whether it's a procurement team, a finance desk, or a product org, I can speak the language of data and the language of business.</p>
+      <p>Currently seeking <strong>internship opportunities</strong> across data analytics, data science, data engineering, business analysis, financial analytics, and procurement analytics — with a goal of converting to full-time upon graduation.</p>
+      <div class="uiuc-badge"><span class="uiuc-i">I</span> University of Illinois Urbana-Champaign &nbsp;·&nbsp; MS Information Management</div>
+    </div>
+    <div class="about-right">
+      <div class="stat-card"><div class="stat-num">3+</div><div class="stat-label">End-to-End Projects</div></div>
+      <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Analytics Tools</div></div>
+      <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Target Roles</div></div>
+      <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">Curiosity</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="eyebrow reveal">Skills & Tools</div>
+  <h2 class="section-h reveal">My Toolkit.</h2>
+  <div class="skills-grid reveal">
+    <div class="skill-card">
+      <div class="skill-head">🐍 Languages</div>
+      <div class="pill-wrap">
+        <span class="pill pb">Python</span><span class="pill pb">SQL</span><span class="pill pb">R</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-head">📊 Analytics & BI</div>
+      <div class="pill-wrap">
+        <span class="pill pp">Power BI</span><span class="pill pp">Tableau</span><span class="pill pp">Excel (Advanced)</span><span class="pill pp">Streamlit</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-head">🤖 Machine Learning</div>
+      <div class="pill-wrap">
+        <span class="pill pg">XGBoost</span><span class="pill pg">Scikit-learn</span><span class="pill pg">Feature Engineering</span><span class="pill pg">Risk Modeling</span><span class="pill pg">Computer Vision</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-head">🗄️ Data Engineering</div>
+      <div class="pill-wrap">
+        <span class="pill pb">PostgreSQL</span><span class="pill pb">SQLite</span><span class="pill pb">ETL Pipelines</span><span class="pill pb">REST APIs</span><span class="pill pb">Pandas</span><span class="pill pb">NumPy</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-head">💼 Business & Finance</div>
+      <div class="pill-wrap">
+        <span class="pill pp">Market Analysis</span><span class="pill pp">Risk Assessment</span><span class="pill pp">Supplier Scoring</span><span class="pill pp">KPI Dashboards</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-head">🛠️ Tools & Workflow</div>
+      <div class="pill-wrap">
+        <span class="pill pg">Git & GitHub</span><span class="pill pg">Jupyter</span><span class="pill pg">VS Code</span><span class="pill pg">Streamlit Cloud</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="eyebrow reveal">Projects</div>
+  <h2 class="section-h reveal">Things I've Built.</h2>
+  <div class="projects-list">
+
+    <div class="project-card reveal">
+      <div>
+        <div class="proj-num">01 — Procurement · Supply Chain · ML</div>
+        <div class="proj-name">Supplier Risk & Cost Escalation Intelligence Platform</div>
+        <div class="proj-domain">📦 Supply Chain Analytics · Risk Modeling</div>
+        <img src="assets/images/supplier_dashboard.png" 
+     alt="Supplier Risk Dashboard"
+     class="project-img">
+        <p class="proj-desc">Machine learning system that analyzes supplier transaction data to predict delivery delays, cancellations, and profit volatility.
+Combines these risks into a composite supplier risk score and visualizes results in an interactive procurement analytics dashboard.</p>
+        <ul class="proj-highlights">
+          <li>Engineered supplier-level performance features (late delivery rate, cancellation rate, margin variability) from raw transaction data using Python, Pandas, and SQL.</li>
+          <li>Trained XGBoost models to estimate late delivery risk, cancellation risk, and profit margin instability, then combined predictions into a weighted composite supplier risk score.</li>
+          <li>Translated model outputs into interpretable supplier risk tiers (Critical / High / Medium / Low) to support procurement prioritization and risk monitoring.</li>
+          <li>Built an interactive Streamlit dashboard displaying supplier risk rankings, KPI summaries, department-level risk heatmaps, and risk distribution analytics.</li>
+          <li>Analyzed supplier performance patterns to identify high-risk vendors and operational risk drivers across departments.</li>
+        </ul>
+        <div class="proj-stack">
+          <span class="proj-tag">Python</span><span class="proj-tag">XGBoost</span><span class="proj-tag">Scikit-learn</span><span class="proj-tag">Pandas</span><span class="proj-tag">SQL</span><span class="proj-tag">Streamlit</span><span class="proj-tag">Feature Engineering</span>
+        </div>
+      </div>
+      <div class="proj-links">
+        <a href="https://github.com/tejas-jaggi/supplier-risk-intelligence-platform" target="_blank" class="proj-link">⬡ GitHub</a>
+        <a href="https://supplier-risk-intelligence.streamlit.app/" target="_blank" class="proj-link">⬡ Live Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal d1">
+      <div>
+        <div class="proj-num">02 — Data Engineering · Analytics · ML</div>
+        <div class="proj-name">Satellite Collision Risk Intelligence Platform</div>
+        <div class="proj-domain">🛰️ Space Analytics · Risk Intelligence</div>
+        <img src="assets/images/satellite_dashboard.png" 
+     alt="Satellite Collision Dashboard"
+     class="project-img">
+        <p class="proj-desc">A full end-to-end data engineering and ML platform that ingests real satellite orbital data from CelesTrak (used by NASA & ESA), engineers collision-risk features from orbital mechanics, trains a risk prediction model, and serves results through an interactive dashboard — mirroring actual Space Traffic Management systems.</p>
+        <ul class="proj-highlights">
+          <li>Built a Python ETL pipeline that ingests real orbital element data from the CelesTrak API, parses TLE fields, and loads 9,000+ satellites and 25,000+ debris objects into a normalized SQLite database.</li>
+          <li>Computed altitude and velocity from orbital mechanics (mean motion → orbital period → altitude) and engineered collision-risk features from scratch</li>
+          <li>Trained an XGBoost classifier to estimate collision risk probability for satellites based on orbital density, debris proximity, and altitude-band characteristics.</li>
+          <li>Deployed an interactive Streamlit dashboard visualizing satellite risk scores, orbital congestion patterns, and high-risk altitude zones.</li>
+          <li>Analyzed ~35,000 orbital objects and identified high-density altitude bands in Low Earth Orbit where collision risk is concentrated.</li>
+        </ul>
+        <div class="proj-stack">
+          <span class="proj-tag">Python</span><span class="proj-tag">SQLite</span><span class="proj-tag">CelesTrak API</span><span class="proj-tag">Orbital Mechanics</span><span class="proj-tag">ML</span><span class="proj-tag">Streamlit</span><span class="proj-tag">ETL Pipeline</span>
+        </div>
+      </div>
+      <div class="proj-links">
+        <a href="https://github.com/tejas-jaggi/satellite-collision-risk-intelligence" target="_blank" class="proj-link">⬡ GitHub</a>
+        <a href="https://satellite-collision-risk.streamlit.app/" target="_blank" class="proj-link">⬡ Live Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal d2">
+      <div>
+        <div class="proj-num">03 — Business Analysis · Market Research</div>
+        <div class="proj-name">Commercialization Assessment: 3D Background Segmentation Technology</div>
+        <div class="proj-domain">📷 Technology Transfer · Market Strategy</div>
+        <p class="proj-desc">A structured technology transfer and commercialization evaluation report for a patented 3D depth-sensing background segmentation system. Assessed market opportunity, competitive landscape, industry applications, and go-to-market strategy across video conferencing, AR/VR, robotics, and surveillance sectors.</p>
+        <ul class="proj-highlights">
+          <li>Analyzed the patented computer-vision method (depth + RGB fusion) and identified key technical differentiation enabling lightweight edge deployment compared to neural segmentation models.</li>
+          <li>Assessed potential application markets including video conferencing, AR/VR systems, robotics vision pipelines, and intelligent surveillance platforms.</li>
+          <li>Evaluated commercialization pathways (IP licensing, strategic partnerships, startup formation) and recommended licensing to computer vision platform vendors as the most viable near-term strategy.</li>
+          <li>Conducted competitive benchmarking against depth-sensing platforms (e.g., Kinect lineage) and modern neural segmentation approaches to identify adoption barriers and market risks.</li>
+        </ul>
+        <div class="proj-stack">
+          <span class="proj-tag">Market Analysis</span><span class="proj-tag">Technology Transfer</span><span class="proj-tag">Competitive Intelligence</span><span class="proj-tag">Computer Vision</span><span class="proj-tag">Business Strategy</span>
+        </div>
+      </div>
+      <div class="proj-links">
+        <a href="assets/commercialization-report.pdf" target="_blank" class="proj-link">⬡ Report</a>
+      </div>
+    </div>
+
+    <div class="project-card soon reveal d3">
+      <div>
+        <div class="coming-tag">⧗ Coming Soon</div>
+        <div class="proj-num">04 — In Progress</div>
+        <div class="proj-name">Project #4</div>
+        <p class="proj-desc">Currently building. Follow on GitHub for updates.</p>
+        <div class="proj-stack"><span class="proj-tag">TBD</span></div>
+      </div>
+      <div class="proj-links"><a href="https://github.com/tejas-jaggi" target="_blank" class="proj-link">⬡ GitHub</a></div>
+    </div>
+
+    <div class="project-card soon reveal">
+      <div>
+        <div class="coming-tag">⧗ Coming Soon</div>
+        <div class="proj-num">05 — In Progress</div>
+        <div class="proj-name">Project #5</div>
+        <p class="proj-desc">Currently building. Follow on GitHub for updates.</p>
+        <div class="proj-stack"><span class="proj-tag">TBD</span></div>
+      </div>
+      <div class="proj-links"><a href="https://github.com/tejas-jaggi" target="_blank" class="proj-link">⬡ GitHub</a></div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="eyebrow reveal">Contact</div>
+  <h2 class="section-h reveal">Let's Connect.</h2>
+  <div class="contact-box reveal">
+    <p class="contact-sub">I'm actively looking for <strong>internship opportunities</strong> in data analytics, data science, data engineering, business analysis, financial analytics, and procurement analytics — with a goal of full-time upon graduation from UIUC. If you have a role, a project, or just want to talk data, reach out.</p>
+    <div class="c-links">
+      <a href="mailto:jaggitejas4@gmail.com" class="c-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        jaggitejas4@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/tejas-jaggi-a55134221" target="_blank" class="c-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/tejas-jaggi" target="_blank" class="c-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>Tejas Jaggi</span> · MSIM @ UIUC</p>
+  <p>Built for data. Built to hire.</p>
+</footer>
+
+<script>
+  const cur = document.getElementById('cur'), ring = document.getElementById('ring');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+  (function a(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';});
+    el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';});
+  });
+  const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
