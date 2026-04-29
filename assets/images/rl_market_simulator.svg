@@ -1,0 +1,317 @@
+<svg viewBox="0 0 1100 520" xmlns="http://www.w3.org/2000/svg" font-family="'DM Mono', 'Courier New', monospace">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0f1a"/>
+      <stop offset="100%" stop-color="#06080f"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4f9eff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#4f9eff" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="learningLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#4f9eff"/>
+    </linearGradient>
+    <linearGradient id="surgeBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#1a7a5e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="chartClip">
+      <rect x="32" y="88" width="320" height="180"/>
+    </clipPath>
+    <clipPath id="barClip">
+      <rect x="390" y="88" width="370" height="180"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="520" fill="url(#bgGrad)" rx="10"/>
+
+  <!-- Subtle grid lines -->
+  <g stroke="#1a2236" stroke-width="0.5" opacity="0.5">
+    <line x1="0" y1="130" x2="1100" y2="130"/>
+    <line x1="0" y1="200" x2="1100" y2="200"/>
+    <line x1="0" y1="270" x2="1100" y2="270"/>
+    <line x1="0" y1="340" x2="1100" y2="340"/>
+    <line x1="0" y1="410" x2="1100" y2="410"/>
+    <line x1="200" y1="0" x2="200" y2="520"/>
+    <line x1="400" y1="0" x2="400" y2="520"/>
+    <line x1="600" y1="0" x2="600" y2="520"/>
+    <line x1="800" y1="0" x2="800" y2="520"/>
+    <line x1="1000" y1="0" x2="1000" y2="520"/>
+  </g>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1100" height="3" rx="0" fill="url(#learningLine)"/>
+
+  <!-- Header bar -->
+  <rect x="0" y="3" width="1100" height="50" fill="#0e1220"/>
+  <rect x="0" y="52" width="1100" height="1" fill="#1a2236"/>
+
+  <!-- Header: title -->
+  <text x="24" y="33" fill="#e2e8f5" font-size="12" font-weight="500" letter-spacing="0.08em">RL PRICING AGENT · MARKET SIMULATOR</text>
+  <text x="24" y="47" fill="#4a5a78" font-size="9" letter-spacing="0.12em">IS557 · UIUC · PPO · GYMNASIUM · STABLE-BASELINES3</text>
+
+  <!-- Header badges -->
+  <rect x="790" y="14" width="90" height="20" rx="2" fill="#0b1a2e" stroke="#4f9eff" stroke-width="0.8"/>
+  <text x="835" y="28" fill="#4f9eff" font-size="9" text-anchor="middle" letter-spacing="0.08em">600K STEPS</text>
+
+  <rect x="888" y="14" width="80" height="20" rx="2" fill="#0e1a0e" stroke="#34d399" stroke-width="0.8"/>
+  <text x="928" y="28" fill="#34d399" font-size="9" text-anchor="middle" letter-spacing="0.08em">5/5 WINS</text>
+
+  <rect x="976" y="14" width="100" height="20" rx="2" fill="#160e2e" stroke="#a78bfa" stroke-width="0.8"/>
+  <text x="1026" y="28" fill="#a78bfa" font-size="9" text-anchor="middle" letter-spacing="0.08em">5-SEED VALID.</text>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- LEFT PANEL: Learning Curve -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <rect x="16" y="64" width="352" height="232" rx="4" fill="#0e1220" stroke="#1a2236" stroke-width="1"/>
+  <text x="28" y="82" fill="#8896b0" font-size="9" letter-spacing="0.1em">PPO LEARNING CURVE — REWARD CONVERGENCE</text>
+
+  <!-- Chart axes -->
+  <line x1="52" y1="92" x2="52" y2="265" stroke="#1a2236" stroke-width="1"/>
+  <line x1="52" y1="265" x2="355" y2="265" stroke="#1a2236" stroke-width="1"/>
+
+  <!-- Y axis labels -->
+  <text x="46" y="96" fill="#4a5a78" font-size="7" text-anchor="end">1.4</text>
+  <text x="46" y="131" fill="#4a5a78" font-size="7" text-anchor="end">1.0</text>
+  <text x="46" y="166" fill="#4a5a78" font-size="7" text-anchor="end">0.6</text>
+  <text x="46" y="201" fill="#4a5a78" font-size="7" text-anchor="end">0.2</text>
+  <text x="46" y="236" fill="#4a5a78" font-size="7" text-anchor="end">-0.2</text>
+
+  <!-- X axis labels -->
+  <text x="52" y="277" fill="#4a5a78" font-size="7" text-anchor="middle">0</text>
+  <text x="116" y="277" fill="#4a5a78" font-size="7" text-anchor="middle">120K</text>
+  <text x="180" y="277" fill="#4a5a78" font-size="7" text-anchor="middle">240K</text>
+  <text x="244" y="277" fill="#4a5a78" font-size="7" text-anchor="middle">360K</text>
+  <text x="308" y="277" fill="#4a5a78" font-size="7" text-anchor="middle">480K</text>
+  <text x="355" y="277" fill="#4a5a78" font-size="7" text-anchor="middle">600K</text>
+
+  <!-- Horizontal grid -->
+  <line x1="52" y1="131" x2="355" y2="131" stroke="#1a2236" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <line x1="52" y1="166" x2="355" y2="166" stroke="#1a2236" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <line x1="52" y1="201" x2="355" y2="201" stroke="#1a2236" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <line x1="52" y1="236" x2="355" y2="236" stroke="#1a2236" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+  <!-- Raw reward (noisy, light) — volatile scatter approximated with polyline -->
+  <polyline points="
+    52,240 58,228 64,245 70,232 76,218 82,235 88,220 94,230 100,210
+    106,225 112,205 118,215 124,198 130,210 136,195 142,205 148,188
+    154,198 160,182 166,192 172,178 178,188 184,170 190,180 196,168
+    202,175 208,162 214,170 220,158 226,165 232,152 238,160 244,148
+    250,155 256,142 262,150 268,138 274,146 280,135 286,142 292,132
+    298,140 304,128 310,136 316,125 322,133 328,122 334,130 340,120 350,118
+  " fill="none" stroke="#a78bfa" stroke-width="0.8" opacity="0.25" clip-path="url(#chartClip)"/>
+
+  <!-- Rolling average (smooth, bold) -->
+  <polyline points="
+    52,242 80,228 110,213 140,197 170,183 200,170 230,156 260,145 290,134 320,125 350,118
+  " fill="none" stroke="url(#learningLine)" stroke-width="2.2" filter="url(#glow)" clip-path="url(#chartClip)"/>
+
+  <!-- Convergence dot at end -->
+  <circle cx="350" cy="118" r="3.5" fill="#4f9eff" filter="url(#glow)"/>
+
+  <!-- Trend annotation -->
+  <rect x="240" y="92" width="110" height="16" rx="2" fill="#0a1520" stroke="#1a2236" stroke-width="0.5"/>
+  <text x="295" y="104" fill="#4f9eff" font-size="8" text-anchor="middle">↑ CONVERGING</text>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- MIDDLE PANEL: Profit Lift Bar Chart -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <rect x="378" y="64" width="380" height="232" rx="4" fill="#0e1220" stroke="#1a2236" stroke-width="1"/>
+  <text x="390" y="82" fill="#8896b0" font-size="9" letter-spacing="0.1em">RL PROFIT LIFT vs. SMARTHEURISTIC BENCHMARK</text>
+
+  <!-- Bars: 5 scenarios, values: Normal +24.4, Inflation +13.7, Recession +8.1, Surge +79.3, Stagflation +8.0 -->
+  <!-- Max bar at 79.3% → scale: 79.3 = 155px height, base y=260 -->
+  <!-- Normal: 24.4/79.3 * 155 = 47.7px -->
+  <rect x="400" y="213" width="44" height="48" rx="2" fill="url(#blueGrad)"/>
+  <text x="422" y="208" fill="#4f9eff" font-size="10" font-weight="500" text-anchor="middle">+24.4%</text>
+  <text x="422" y="274" fill="#8896b0" font-size="8" text-anchor="middle">Normal</text>
+
+  <!-- Inflation: 13.7/79.3 * 155 = 26.8px -->
+  <rect x="458" y="234" width="44" height="27" rx="2" fill="url(#blueGrad)"/>
+  <text x="480" y="229" fill="#4f9eff" font-size="10" font-weight="500" text-anchor="middle">+13.7%</text>
+  <text x="480" y="274" fill="#8896b0" font-size="8" text-anchor="middle">Inflation</text>
+
+  <!-- Recession: 8.1/79.3 * 155 = 15.8px -->
+  <rect x="516" y="245" width="44" height="16" rx="2" fill="url(#purpleGrad)"/>
+  <text x="538" y="240" fill="#a78bfa" font-size="10" font-weight="500" text-anchor="middle">+8.1%</text>
+  <text x="538" y="274" fill="#8896b0" font-size="8" text-anchor="middle">Recession</text>
+
+  <!-- Demand Surge: 79.3/79.3 * 155 = 155px → TALL GREEN BAR -->
+  <rect x="574" y="106" width="44" height="155" rx="2" fill="url(#surgeBar)" filter="url(#softGlow)"/>
+  <text x="596" y="100" fill="#34d399" font-size="11" font-weight="500" text-anchor="middle">+79.3%</text>
+  <text x="596" y="274" fill="#8896b0" font-size="8" text-anchor="middle">Surge</text>
+
+  <!-- Stagflation: 8.0/79.3 * 155 = 15.6px -->
+  <rect x="632" y="245" width="44" height="16" rx="2" fill="url(#purpleGrad)"/>
+  <text x="654" y="240" fill="#a78bfa" font-size="10" font-weight="500" text-anchor="middle">+8.0%</text>
+  <text x="654" y="274" fill="#8896b0" font-size="8" text-anchor="middle">Stagflation</text>
+
+  <!-- Baseline grid line -->
+  <line x1="390" y1="261" x2="748" y2="261" stroke="#1a2236" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="750" y="264" fill="#4a5a78" font-size="8">0%</text>
+
+  <!-- Revenue pool caption -->
+  <text x="390" y="288" fill="#4a5a78" font-size="8">Avg revenue pool: 46.8% captured  ·  Benchmark: 33.3%</text>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- RIGHT PANEL: Competitor Scoreboard -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <rect x="768" y="64" width="316" height="232" rx="4" fill="#0e1220" stroke="#1a2236" stroke-width="1"/>
+  <text x="780" y="82" fill="#8896b0" font-size="9" letter-spacing="0.1em">COMPETITOR SCOREBOARD  ·  25 MATCHUPS</text>
+
+  <!-- Column headers -->
+  <text x="780" y="100" fill="#4a5a78" font-size="8">COMPETITOR</text>
+  <text x="960" y="100" fill="#4a5a78" font-size="8" text-anchor="middle">WIN/LOSS</text>
+  <text x="1063" y="100" fill="#4a5a78" font-size="8" text-anchor="middle">AVG LIFT</text>
+  <line x1="780" y1="104" x2="1074" y2="104" stroke="#1a2236" stroke-width="1"/>
+
+  <!-- Row 1: FixedSeller -->
+  <text x="780" y="120" fill="#e2e8f5" font-size="9">FixedSeller</text>
+  <rect x="930" y="110" width="58" height="14" rx="2" fill="#0a1f0a" stroke="#34d399" stroke-width="0.8"/>
+  <text x="959" y="121" fill="#34d399" font-size="9" text-anchor="middle">25 / 25</text>
+  <text x="1063" y="120" fill="#34d399" font-size="10" font-weight="500" text-anchor="middle">+70.6%</text>
+
+  <!-- Row 2: Undercutter -->
+  <text x="780" y="142" fill="#e2e8f5" font-size="9">Undercutter</text>
+  <rect x="930" y="132" width="58" height="14" rx="2" fill="#1f0a0a" stroke="#ef4444" stroke-width="0.8"/>
+  <text x="959" y="143" fill="#ef4444" font-size="9" text-anchor="middle">0 / 25</text>
+  <text x="1063" y="142" fill="#ef4444" font-size="10" font-weight="500" text-anchor="middle">−5.3%</text>
+  <text x="1073" y="142" fill="#4a5a78" font-size="7">*</text>
+
+  <!-- Row 3: Premium -->
+  <text x="780" y="164" fill="#e2e8f5" font-size="9">Premium</text>
+  <rect x="930" y="154" width="58" height="14" rx="2" fill="#0a1f0a" stroke="#34d399" stroke-width="0.8"/>
+  <text x="959" y="165" fill="#34d399" font-size="9" text-anchor="middle">25 / 25</text>
+  <text x="1063" y="164" fill="#34d399" font-size="10" font-weight="500" text-anchor="middle">+13.0%</text>
+
+  <!-- Row 4: Chaotic -->
+  <text x="780" y="186" fill="#e2e8f5" font-size="9">Chaotic</text>
+  <rect x="930" y="176" width="58" height="14" rx="2" fill="#0a1f0a" stroke="#34d399" stroke-width="0.8"/>
+  <text x="959" y="187" fill="#34d399" font-size="9" text-anchor="middle">25 / 25</text>
+  <text x="1063" y="186" fill="#34d399" font-size="10" font-weight="500" text-anchor="middle">+49.5%</text>
+
+  <!-- Row 5: Reactive -->
+  <text x="780" y="208" fill="#e2e8f5" font-size="9">Reactive</text>
+  <rect x="930" y="198" width="58" height="14" rx="2" fill="#0a1f0a" stroke="#34d399" stroke-width="0.8"/>
+  <text x="959" y="209" fill="#34d399" font-size="9" text-anchor="middle">25 / 25</text>
+  <text x="1063" y="208" fill="#34d399" font-size="10" font-weight="500" text-anchor="middle">+70.3%</text>
+
+  <!-- Divider + note -->
+  <line x1="780" y1="218" x2="1074" y2="218" stroke="#1a2236" stroke-width="1"/>
+  <text x="780" y="232" fill="#4a5a78" font-size="8">*Undercutter: loss-leader creates structural race-to-bottom</text>
+  <text x="780" y="244" fill="#4a5a78" font-size="8">— expected finding. 4/5 archetypes beaten.</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- BOTTOM ROW: Key stats strip -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <rect x="16" y="308" width="1068" height="1" fill="#1a2236"/>
+
+  <!-- 5 stat boxes -->
+  <!-- Stat 1 -->
+  <rect x="16" y="316" width="202" height="78" rx="4" fill="#0e1220" stroke="#1a2236" stroke-width="1"/>
+  <rect x="16" y="316" width="3" height="78" rx="1" fill="#4f9eff"/>
+  <text x="32" y="338" fill="#4a5a78" font-size="8" letter-spacing="0.1em">TRAINING STEPS</text>
+  <text x="32" y="363" fill="#4f9eff" font-size="26" font-weight="500" filter="url(#glow)">600K</text>
+  <text x="32" y="382" fill="#8896b0" font-size="8">5 independent seeds</text>
+
+  <!-- Stat 2 -->
+  <rect x="228" y="316" width="202" height="78" rx="4" fill="#0e1220" stroke="#1a2236" stroke-width="1"/>
+  <rect x="228" y="316" width="3" height="78" rx="1" fill="#34d399"/>
+  <text x="244" y="338" fill="#4a5a78" font-size="8" letter-spacing="0.1em">DEMAND MODEL</text>
+  <text x="244" y="363" fill="#34d399" font-size="26" font-weight="500" filter="url(#glow)">R²=0.516</text>
+  <text x="244" y="382" fill="#8896b0" font-size="8">26,342 real transactions · OLS</text>
+
+  <!-- Stat 3 -->
+  <rect x="440" y="316" width="202" height="78" rx="4" fill="#0e1220" stroke="#1a2236" stroke-width="1"/>
+  <rect x="440" y="316" width="3" height="78" rx="1" fill="#a78bfa"/>
+  <text x="456" y="338" fill="#4a5a78" font-size="8" letter-spacing="0.1em">STABILITY PENALTY</text>
+  <text x="456" y="363" fill="#a78bfa" font-size="26" font-weight="500" filter="url(#glow)">−90.8%</text>
+  <text x="456" y="382" fill="#8896b0" font-size="8">price volatility · λ=2,500 · +2.1% profit</text>
+
+  <!-- Stat 4 -->
+  <rect x="652" y="316" width="202" height="78" rx="4" fill="#0e1220" stroke="#1a2236" stroke-width="1"/>
+  <rect x="652" y="316" width="3" height="78" rx="1" fill="#34d399"/>
+  <text x="668" y="338" fill="#4a5a78" font-size="8" letter-spacing="0.1em">REVENUE POOL</text>
+  <text x="668" y="363" fill="#34d399" font-size="26" font-weight="500" filter="url(#glow)">46.8%</text>
+  <text x="668" y="382" fill="#8896b0" font-size="8">avg captured · 33.3% equal-share bench.</text>
+
+  <!-- Stat 5 -->
+  <rect x="864" y="316" width="220" height="78" rx="4" fill="#0e1220" stroke="#1a2236" stroke-width="1"/>
+  <rect x="864" y="316" width="3" height="78" rx="1" fill="#4f9eff"/>
+  <text x="880" y="338" fill="#4a5a78" font-size="8" letter-spacing="0.1em">SCENARIOS WON</text>
+  <text x="880" y="363" fill="#4f9eff" font-size="26" font-weight="500" filter="url(#glow)">5 / 5</text>
+  <text x="880" y="382" fill="#8896b0" font-size="8">+8% to +79% lift vs expert benchmark</text>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- BOTTOM STRIP: Lambda Ablation mini-chart -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <rect x="16" y="406" width="502" height="100" rx="4" fill="#0e1220" stroke="#1a2236" stroke-width="1"/>
+  <text x="28" y="423" fill="#8896b0" font-size="9" letter-spacing="0.1em">LAMBDA ABLATION  ·  STABILITY PENALTY IMPACT</text>
+
+  <!-- λ=0 bar -->
+  <text x="46" y="450" fill="#4a5a78" font-size="9" text-anchor="end">λ=0</text>
+  <rect x="52" y="438" width="220" height="16" rx="2" fill="#1a1030" stroke="#a78bfa" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <rect x="52" y="438" width="220" height="16" rx="2" fill="#a78bfa" fill-opacity="0.15"/>
+  <text x="280" y="450" fill="#a78bfa" font-size="9">146,912 avg profit</text>
+  <text x="380" y="450" fill="#ef4444" font-size="9">0.055 volatility</text>
+
+  <!-- λ=2500 bar (wider, profit improved) -->
+  <text x="46" y="478" fill="#4a5a78" font-size="9" text-anchor="end">λ=2500</text>
+  <rect x="52" y="466" width="224" height="16" rx="2" fill="#0a1a10" stroke="#34d399" stroke-width="0.8"/>
+  <rect x="52" y="466" width="224" height="16" rx="2" fill="#34d399" fill-opacity="0.18"/>
+  <text x="284" y="478" fill="#34d399" font-size="9">149,994 avg profit ↑</text>
+  <text x="380" y="478" fill="#34d399" font-size="9">0.005 volatility ↓</text>
+
+  <text x="28" y="498" fill="#4a5a78" font-size="8">Penalty reduces volatility −90.8% while improving profit +2.1%  ·  win-win</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- BOTTOM RIGHT: Shock Engine diagram -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <rect x="530" y="406" width="554" height="100" rx="4" fill="#0e1220" stroke="#1a2236" stroke-width="1"/>
+  <text x="542" y="423" fill="#8896b0" font-size="9" letter-spacing="0.1em">COMPOSABLE SHOCK ENGINE  ·  STRUCTURAL PARAMETER SHIFTS</text>
+
+  <!-- 5 shock pills -->
+  <rect x="542" y="434" width="80" height="22" rx="3" fill="#0b1a2e" stroke="#4f9eff" stroke-width="0.8"/>
+  <text x="582" y="449" fill="#4f9eff" font-size="9" text-anchor="middle">NORMAL</text>
+
+  <rect x="630" y="434" width="80" height="22" rx="3" fill="#1a1008" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="670" y="449" fill="#f59e0b" font-size="9" text-anchor="middle">INFLATION</text>
+
+  <rect x="718" y="434" width="80" height="22" rx="3" fill="#1f0a0a" stroke="#ef4444" stroke-width="0.8"/>
+  <text x="758" y="449" fill="#ef4444" font-size="9" text-anchor="middle">RECESSION</text>
+
+  <rect x="806" y="434" width="80" height="22" rx="3" fill="#0a1f0a" stroke="#34d399" stroke-width="0.8"/>
+  <text x="846" y="449" fill="#34d399" font-size="9" text-anchor="middle">SURGE</text>
+
+  <rect x="894" y="434" width="80" height="22" rx="3" fill="#160e2e" stroke="#a78bfa" stroke-width="0.8"/>
+  <text x="934" y="449" fill="#a78bfa" font-size="9" text-anchor="middle">STAGFLATION</text>
+
+  <!-- Stack arrow for stagflation -->
+  <text x="982" y="449" fill="#4a5a78" font-size="8">= ∑</text>
+
+  <text x="542" y="473" fill="#4a5a78" font-size="8">Shocks modify structural demand parameters  ·  D(t) = 33,743 − 17,641×P + 203×t + ε</text>
+  <text x="542" y="487" fill="#4a5a78" font-size="8">Composable stacking  ·  Ramped onset  ·  Economically calibrated  ·  R² = 0.516</text>
+  <text x="542" y="498" fill="#4a5a78" font-size="8">5 competitor archetypes  ·  Logit allocation α=2.5  ·  6 parallel envs during training</text>
+</svg>
