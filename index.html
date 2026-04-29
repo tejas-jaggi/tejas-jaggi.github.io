@@ -207,12 +207,12 @@ border:1px solid rgba(255,255,255,0.1);
       <div class="eyebrow">About Me</div>
       <h2 class="section-h">Analyst. Builder.<br/>Problem Solver.</h2>
       <p>I'm <strong>Tejas Jaggi</strong>, a grad student at UIUC pursuing my Master's in Information Management. My work sits at the intersection of <strong>data engineering, machine learning, and business intelligence</strong> — I don't just build models, I build systems that go from raw data all the way to decision-ready dashboards.</p>
-      <p>My projects span aerospace analytics, supply chain risk, and technology commercialization — not because I chase novelty, but because I believe <strong>data skills transfer across every domain</strong>. Whether it's a procurement team, a finance desk, or a product org, I can speak the language of data and the language of business.</p>
+      <p>My projects span aerospace analytics, supply chain risk, and machine learning market simulator — not because I chase novelty, but because I believe <strong>data skills transfer across every domain</strong>. Whether it's a procurement team, a finance desk, or a product org, I can speak the language of data and the language of business.</p>
       <p>Currently seeking <strong>internship opportunities</strong> across data analytics, data science, data engineering, business analysis, financial analytics, and procurement analytics — with a goal of converting to full-time upon graduation.</p>
       <div class="uiuc-badge"><span class="uiuc-i">I</span> University of Illinois Urbana-Champaign &nbsp;·&nbsp; MS Information Management</div>
     </div>
     <div class="about-right">
-      <div class="stat-card"><div class="stat-num">3+</div><div class="stat-label">End-to-End Projects</div></div>
+      <div class="stat-card"><div class="stat-num">4+</div><div class="stat-label">End-to-End Projects</div></div>
       <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Analytics Tools</div></div>
       <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Target Roles</div></div>
       <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">Curiosity</div></div>
@@ -342,15 +342,29 @@ Combines these risks into a composite supplier risk score and visualizes results
       </div>
     </div>
 
-    <div class="project-card soon reveal d3">
+    <div class="project-card reveal d3">
       <div>
-        <div class="coming-tag">⧗ Coming Soon</div>
-        <div class="proj-num">04 — In Progress</div>
-        <div class="proj-name">Project #4</div>
-        <p class="proj-desc">Currently building. Follow on GitHub for updates.</p>
-        <div class="proj-stack"><span class="proj-tag">TBD</span></div>
+        <div class="proj-num">04 — Reinforcement Learning · Market Simulation · Research</div>
+        <div class="proj-name">RL Pricing Agent &amp; Market Simulator</div>
+        <div class="proj-domain">🤖 Reinforcement Learning · Dynamic Pricing · Retail Analytics</div>
+        <img src="assets/images/rl_market_simulator.svg"
+             alt="RL Market Simulator Dashboard"
+             class="project-img">
+        <p class="proj-desc">End-to-end reinforcement learning system trained to dynamically price products in a simulated competitive retail market. Calibrated on 26,342 real retail transactions, the PPO agent competes against 5 distinct competitor archetypes across 5 market shock scenarios — outperforming an expert-designed benchmark in all conditions with profit lifts of +8% to +79%.</p>
+        <ul class="proj-highlights">
+          <li>Cleaned and processed 26,342 real retail transactions to fit a calibrated OLS demand model (R²=0.516), producing 13 publication-ready validation figures.</li>
+          <li>Built a custom OpenAI Gymnasium environment with a composable Shock Engine that injects 5 market disruption types (inflation, recession, demand surge, stagflation) by modifying structural demand parameters — not arbitrary multipliers.</li>
+          <li>Trained a PPO reinforcement learning agent over 600,000 simulation steps across 5 random seeds; agent wins 5/5 market scenarios and captures 46.8% of the revenue pool vs. a 33.3% equal-share benchmark.</li>
+          <li>Introduced a price-stability penalty (λ=2,500) to the reward function that reduces price volatility by 90.8% while simultaneously improving profit by 2.1% — addressing a key barrier for real-world e-commerce deployment.</li>
+          <li>Benchmarked against 5 competitor archetypes (FixedSeller, Undercutter, Premium, Chaotic, Reactive) across 25 head-to-head matchups; agent beats 4/5 archetypes with structured analysis of the Undercutter boundary condition.</li>
+        </ul>
+        <div class="proj-stack">
+          <span class="proj-tag">Python</span><span class="proj-tag">PPO</span><span class="proj-tag">Stable-Baselines3</span><span class="proj-tag">OpenAI Gymnasium</span><span class="proj-tag">Pandas</span><span class="proj-tag">NumPy</span><span class="proj-tag">Scikit-learn</span><span class="proj-tag">Matplotlib</span>
+        </div>
       </div>
-      <div class="proj-links"><a href="https://github.com/tejas-jaggi" target="_blank" class="proj-link">⬡ GitHub</a></div>
+      <div class="proj-links">
+        <a href="https://github.com/tejas-jaggi/market_sim" target="_blank" class="proj-link">⬡ GitHub</a>
+      </div>
     </div>
 
     <div class="project-card soon reveal">
