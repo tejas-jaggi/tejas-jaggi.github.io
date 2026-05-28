@@ -115,6 +115,11 @@ border-radius:10px;
 margin:15px 0;
 border:1px solid rgba(255,255,255,0.1);
 }
+    .dash-gallery { display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:15px 0; }
+    .dash-gallery img { width:100%;border-radius:6px;border:1px solid var(--border);transition:border-color .25s,transform .25s;display:block; }
+    .dash-gallery img:hover { border-color:var(--accent);transform:scale(1.02); }
+    .dash-label { font-family:'DM Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.1em;text-align:center;margin-top:3px; }
+    .dash-cell { display:flex;flex-direction:column; }
 
     #contact { background:var(--bg); }
     .contact-box { max-width:780px;border:1px solid var(--border);background:var(--card);padding:3rem;position:relative;overflow:hidden; }
@@ -212,7 +217,7 @@ border:1px solid rgba(255,255,255,0.1);
       <div class="uiuc-badge"><span class="uiuc-i">I</span> University of Illinois Urbana-Champaign &nbsp;·&nbsp; MS Information Management</div>
     </div>
     <div class="about-right">
-      <div class="stat-card"><div class="stat-num">4+</div><div class="stat-label">End-to-End Projects</div></div>
+      <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">End-to-End Projects</div></div>
       <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Analytics Tools</div></div>
       <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Target Roles</div></div>
       <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">Curiosity</div></div>
@@ -245,7 +250,7 @@ border:1px solid rgba(255,255,255,0.1);
     <div class="skill-card">
       <div class="skill-head">🗄️ Data Engineering</div>
       <div class="pill-wrap">
-        <span class="pill pb">PostgreSQL</span><span class="pill pb">SQLite</span><span class="pill pb">ETL Pipelines</span><span class="pill pb">REST APIs</span><span class="pill pb">Pandas</span><span class="pill pb">NumPy</span>
+        <span class="pill pb">PostgreSQL</span><span class="pill pb">SQLite</span><span class="pill pb">ETL Pipelines</span><span class="pill pb">REST APIs</span><span class="pill pb">Pandas</span><span class="pill pb">NumPy</span><span class="pill pb">Power Query (M)</span><span class="pill pb">DAX</span>
       </div>
     </div>
     <div class="skill-card">
@@ -367,15 +372,57 @@ Combines these risks into a composite supplier risk score and visualizes results
       </div>
     </div>
 
-    <div class="project-card soon reveal">
+    <div class="project-card reveal">
       <div>
-        <div class="coming-tag">⧗ Coming Soon</div>
-        <div class="proj-num">05 — In Progress</div>
-        <div class="proj-name">Project #5</div>
-        <p class="proj-desc">Currently building. Follow on GitHub for updates.</p>
-        <div class="proj-stack"><span class="proj-tag">TBD</span></div>
+        <div class="proj-num">05 — Data Warehousing &amp; BI · ETL Pipeline · Dashboard Design</div>
+        <div class="proj-name">Global Crude Oil Price Analytics (1970–2026)</div>
+        <div class="proj-domain">📊 Power BI · Power Query · DAX · Time-Series Analysis · DWBI</div>
+        <img src="assets/images/crude_oil_preview.png"
+             alt="Global Crude Oil Analytics — All 4 Dashboards"
+             class="project-img">
+        <div class="dash-gallery">
+          <div class="dash-cell">
+            <img src="assets/images/crude_dashboard_1.png" alt="Dashboard 1 — 55-Year Price History"/>
+            <div class="dash-label">01 · Price History</div>
+          </div>
+          <div class="dash-cell">
+            <img src="assets/images/crude_dashboard_2.png" alt="Dashboard 2 — Volatility & Shocks"/>
+            <div class="dash-label">02 · Volatility &amp; Shocks</div>
+          </div>
+          <div class="dash-cell">
+            <img src="assets/images/crude_dashboard_3.png" alt="Dashboard 3 — Decade DNA"/>
+            <div class="dash-label">03 · Decade DNA</div>
+          </div>
+          <div class="dash-cell">
+            <img src="assets/images/crude_dashboard_4.png" alt="Dashboard 4 — Seasonal Pulse"/>
+            <div class="dash-label">04 · Seasonal Pulse</div>
+          </div>
+        </div>
+        <p class="proj-desc">End-to-end business intelligence project analyzing 56 years of monthly Brent crude oil prices across 676 data points. Built a complete ETL pipeline in Power Query, authored 15 DAX measures, and designed 4 interactive dashboards — enabling anyone to explore one of the most consequential commodity datasets in global economic history without any prior knowledge of energy markets.</p>
+        <ul class="proj-highlights">
+          <li>Engineered a full ETL pipeline in Power Query: standardized date types, derived 8 calculated columns (Decade, Price Era, Crisis Period flags, Quarter labels, YoY % change) and structured the model as a star schema with a dedicated DateTable enabling all time-intelligence DAX functions.</li>
+          <li>Authored 15 DAX measures including rolling 12M/3M averages, year-over-year % change, P25/P75 price spread, price standard deviation, seasonal index, and peak drawdown — powering multi-dimensional analysis across all 4 dashboards from a single semantic model.</li>
+          <li>Dashboard 1 — Price History (1970–2026): dual-line chart (actual vs rolling avg) with 3 threshold reference lines, 4 annotated crisis events (1973 Embargo, 2008 Financial Crisis, 2020 COVID, 2022 Ukraine War), and cross-filtering decade/price-era slicers.</li>
+          <li>Dashboard 2 — Volatility &amp; Shocks: conditional-formatted YoY % column chart (blue = rise, red = crash) revealing +211% in 1974 and -47% in 1986 as the most extreme years; supported by a rolling-average convergence chart and a heat-colored shock magnitude table sortable by severity.</li>
+          <li>Dashboard 3 — Decade DNA: horizontal bar chart with warm-to-red color progression showing escalating decade averages ($9.70 in 1970s → $76.45 in 2010s); scatter plot mapping price level vs volatility reveals the 2000s/2010s as the uniquely high-price AND high-volatility era; conditional-formatted scorecard matrix enables instant decade comparison.</li>
+          <li>Dashboard 4 — Seasonal Pulse: 56×12 matrix heatmap (blue → red gradient) visualizes the entire post-2000 price regime shift at a glance; average-by-month line chart identifies July/June as peak seasonal months; decade-breakout clustered chart answers whether the seasonal pattern has structurally shifted across eras.</li>
+        </ul>
+        <div class="proj-stack">
+          <span class="proj-tag">Power BI</span>
+          <span class="proj-tag">Power Query (M)</span>
+          <span class="proj-tag">DAX</span>
+          <span class="proj-tag">ETL Pipeline</span>
+          <span class="proj-tag">Star Schema</span>
+          <span class="proj-tag">Time-Series Analysis</span>
+          <span class="proj-tag">Conditional Formatting</span>
+          <span class="proj-tag">Interactive Dashboards</span>
+          <span class="proj-tag">Data Modeling</span>
+        </div>
       </div>
-      <div class="proj-links"><a href="https://github.com/tejas-jaggi" target="_blank" class="proj-link">⬡ GitHub</a></div>
+      <div class="proj-links">
+        <a href="https://github.com/tejas-jaggi/crude-oil-analytics" target="_blank" class="proj-link">⬡ GitHub</a>
+        <a href="https://github.com/tejas-jaggi/crude-oil-analytics/raw/main/Crude_Oil_Analytics.pbix" download target="_blank" class="proj-link">⬡ Download .pbix</a>
+      </div>
     </div>
 
   </div>
