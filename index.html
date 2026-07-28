@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tejas Jaggi — ML &amp; Data Science Portfolio</title>
+  <title>Tejas Jaggi — AI &amp; Analytics Engineering Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=Jost:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
@@ -634,6 +634,40 @@
       margin-bottom: 1.1rem;
     }
 
+    /* Consistent evidence-structure sub-section labels within each project */
+    .proj-block { margin-bottom: 1.25rem; }    .proj-block-label {
+      font-size: .66rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 600;
+      margin-bottom: .5rem;
+      display: block;
+    }
+    .proj-block p {
+      font-size: .84rem;
+      color: var(--muted2);
+      line-height: 1.8;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    /* Divider + styling to set the Additional Project apart from flagships */
+    .additional-divider {
+      display: flex; align-items: center; gap: 1rem;
+      margin: 1.5rem 0 2.5rem;
+    }
+    .additional-divider::before,
+    .additional-divider::after {
+      content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.08);
+    }
+    .additional-divider span {
+      font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600; white-space: nowrap;
+    }
+    .additional-project { opacity: .92; }
+    .additional-project .proj-wm { color: rgba(255,255,255,.05); }
+
     .proj-highlights { list-style:none; margin-bottom: 1.4rem; }
     .proj-highlights li {
       font-size: .79rem;
@@ -837,23 +871,23 @@
     <div class="hero-rule"></div>
 
     <div class="hero-roles">
-      <div class="hero-role-line accent">ML Engineer</div>
+      <div class="hero-role-line accent">AI Engineer</div>
       <div class="hero-role-line">Data Scientist</div>
-      <div class="hero-role-line">Data Analyst</div>
+      <div class="hero-role-line">Analytics Engineer</div>
     </div>
   </div>
 
   <!-- RIGHT: Desc, CTA, Stats -->
   <div class="hero-right">
     <p class="hero-desc">
-      I turn <strong>raw data into production-ready systems.</strong><br/>
-      From reinforcement learning agents to multi-page BI dashboards —
-      built to deploy, not just demo.
+      I build <strong>end-to-end analytics and AI systems</strong> —
+      from the data warehouse underneath to the governed, tested software on top.<br/>
+      Business problem first, engineering discipline throughout.
     </p>
 
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">↓ View Projects</a>
-      <a href="https://www.linkedin.com/in/tejas-jaggi-a55134221" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+      <a href="https://www.linkedin.com/in/tejas-jaggi" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
       <a href="https://github.com/tejas-jaggi" target="_blank" class="btn btn-outline">GitHub ↗</a>
     </div>
 
@@ -863,16 +897,16 @@
         <div class="h-stat-label">End-to-End Projects</div>
       </div>
       <div class="h-stat">
-        <div class="h-stat-num">10+</div>
-        <div class="h-stat-label">Tools &amp; Libraries</div>
+        <div class="h-stat-num">76+</div>
+        <div class="h-stat-label">Automated Tests (Solstice)</div>
       </div>
       <div class="h-stat">
-        <div class="h-stat-num">3</div>
-        <div class="h-stat-label">Target Role Tracks</div>
+        <div class="h-stat-num">8</div>
+        <div class="h-stat-label">Architecture Decision Records</div>
       </div>
       <div class="h-stat">
-        <div class="h-stat-num">∞</div>
-        <div class="h-stat-label">Curiosity</div>
+        <div class="h-stat-num">2 yrs</div>
+        <div class="h-stat-label">Industry Analytics Experience</div>
       </div>
     </div>
   </div>
@@ -881,19 +915,19 @@
 <!-- ─── TICKER ─── -->
 <div class="ticker">
   <div class="ticker-track">
-    <span class="ticker-item">ML Engineer</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">AI Engineer</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Data Scientist</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Data Analyst</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Analytics Engineer</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Reinforcement Learning</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Python · SQL · Power BI · XGBoost · PyTorch</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Python · SQL · DuckDB · Power BI · XGBoost</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Feature Engineering</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">ETL Pipelines</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Business Intelligence</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">ML Engineer</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">AI Engineer</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Data Scientist</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Data Analyst</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Analytics Engineer</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Reinforcement Learning</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Python · SQL · Power BI · XGBoost · PyTorch</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Python · SQL · DuckDB · Power BI · XGBoost</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Feature Engineering</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">ETL Pipelines</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Business Intelligence</span><span class="ticker-sep">◆</span>
@@ -910,9 +944,11 @@
 
       <p>I'm <strong>Tejas Jaggi</strong> — MSIM student at UIUC, graduating May 2027. My undergrad was Finance and Information Systems at the University of Toledo, so I came into grad school already thinking about data in terms of <strong>decisions, not just accuracy metrics.</strong></p>
 
-      <p>I build systems end-to-end. Not just notebooks — <strong>pipelines, models, dashboards, and deployed apps.</strong> The RL pricing agent trained on 26,000+ real retail transactions outperforms a handcrafted expert benchmark across five market shock scenarios. The satellite collision classifier processes 35,000+ orbital objects from live CelesTrak feeds. The F1 Championship Dashboard covers 75 years of race history across six fully interactive pages with 30+ visuals and 20+ DAX measures.</p>
+      <p>I build systems end-to-end — from the data foundation to the tested software on top. My most recent project, <strong>Solstice Intelligence</strong>, is a governed natural-language analytics assistant: it turns a plain-English question into validated SQL against a dimensional warehouse, refusing anything unsafe before it runs. It's backed by a comprehensive automated test suite and documented architecture decisions, and I hardened its security layer after adversarial testing exposed a real vulnerability.</p>
 
-      <p>Targeting <strong>full-time roles in ML engineering, data science, and data analytics</strong> — especially at startups or teams where the data stack isn't fully locked in. Available from <strong>May 2027.</strong></p>
+      <p>It runs on a data warehouse I designed and validated in an <strong>earlier project</strong>, and my instinct for framing technical work around business questions comes from two years as a procurement analyst working with enterprise data at scale — not from coursework.</p>
+
+      <p>I'm drawn to work that combines <strong>software engineering, data science, and collaboration with business partners</strong> — building production analytics and AI that help people make better decisions from data. Graduating <strong>May 2027.</strong></p>
 
       <div class="uiuc-chip">
         <span class="uiuc-i">I</span>
@@ -927,16 +963,16 @@
         <div class="a-stat-label">End-to-End<br/>Portfolio Projects</div>
       </div>
       <div class="a-stat">
-        <div class="a-stat-num">10+</div>
-        <div class="a-stat-label">Tools &amp; Libraries<br/>Mastered</div>
+        <div class="a-stat-num">76+</div>
+        <div class="a-stat-label">Automated Tests<br/>(Solstice)</div>
       </div>
       <div class="a-stat">
-        <div class="a-stat-num">3</div>
-        <div class="a-stat-label">Target<br/>Role Tracks</div>
+        <div class="a-stat-num">8</div>
+        <div class="a-stat-label">Architecture<br/>Decision Records</div>
       </div>
       <div class="a-stat">
-        <div class="a-stat-num">∞</div>
-        <div class="a-stat-label">Curiosity</div>
+        <div class="a-stat-num">2 yrs</div>
+        <div class="a-stat-label">Industry Analytics<br/>Experience</div>
       </div>
     </div>
   </div>
@@ -1064,32 +1100,203 @@
   <h2 class="sec-heading reveal">Things I've <em>Built.</em></h2>
 
   <div class="projects-stack">
-
-    <!-- ── PROJECT 01: RL PRICING AGENT ── -->
+    <!-- ── FLAGSHIP 01: CUSTOMER REVENUE ANALYTICS ── -->
     <div class="project-card reveal">
       <div class="proj-wm">01</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-meta-num">01</span>
           <span class="proj-meta-sep">—</span>
-          Reinforcement Learning · Market Simulation · Research
+          Data Engineering · Analytics Engineering · Dimensional Modeling
+        </div>
+        <div class="proj-title">Customer Revenue Analytics Platform</div>
+        <div class="proj-domain">🏛️ Validated Dimensional Warehouse · Modular SQL · Executive Decision Support</div>
+        <div class="proj-metric">Validated warehouse · 12 tables · 79 automated integrity checks · 13 SQL analytics modules</div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Business Problem</span>
+          <p>Revenue questions — who are the most valuable customers, which cohorts retain, where is churn rising — require a trustworthy analytical foundation. Ad-hoc queries against raw tables produce numbers no one can fully trust or reproduce.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Solution</span>
+          <p>A validated dimensional data warehouse with a modular SQL analytics layer on top, built so every published result is traceable back to validated source data — the foundation the Solstice assistant later queries.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Engineering Decisions</span>
+          <p>Modeled the warehouse as a fact constellation rather than a single fact table, because orders, order lines, returns, and monthly snapshots are genuinely different grains — collapsing them would hide the distinction between order-header and product-line revenue. Froze the schema and treated it as certified once validation passed, so downstream analytics build on a stable, known-good foundation rather than a shifting one.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Architecture</span>
+          <p>A star/constellation schema of dimension tables surrounding four fact tables at different grains, with a Python validation framework that must pass before the warehouse is treated as trusted, and a modular SQL layer of 13 analytics modules built on top.</p>
+        </div>
+        <img src="assets/images/cra_star_schema.svg"
+             alt="Customer Revenue Analytics dimensional warehouse schema"
+             class="proj-img">
+
+        <div class="proj-block">
+          <span class="proj-block-label">Technical Implementation</span>
+        </div>
+        <ul class="proj-highlights">
+          <li>Designed a dimensional warehouse (star schema, fact constellation) with dimension tables spanning customer, product, date, geography, channel, campaign, and return-reason.</li>
+          <li>Built 13 modular SQL analytics modules covering RFM segmentation, cohort retention, customer lifetime value, and Pareto revenue concentration.</li>
+          <li>Engineered an automated Python validation framework of 79 reconciliation and integrity checks that must pass before the warehouse is used for any analytics.</li>
+          <li>Added an executive decision layer that turns validated findings into evidence-ranked business recommendations.</li>
+        </ul>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Validation &amp; Evidence</span>
+          <p>79 automated reconciliation and integrity checks must pass before the warehouse is trusted for analytics (its internal "certified" milestone); repository governance, versioning, and documentation are maintained throughout so the whole pipeline is reproducible.</p>
+        </div>
+        <!-- SCREENSHOT PLACEHOLDER: validation output + analytics results -->
+        <div class="img-grid">
+          <img src="assets/images/cra_validation.png" alt="Warehouse validation output" class="proj-img">
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Business Impact</span>
+          <p>Gives decision-makers customer analytics they can act on with confidence, because every number is reproducible and traceable to validated source data — and provides the governed foundation that makes a natural-language analytics interface (Solstice) possible.</p>
+        </div>
+
+        <div class="proj-stack">
+          <span class="proj-tag">SQL</span><span class="proj-tag">DuckDB</span><span class="proj-tag">Python</span><span class="proj-tag">Dimensional Modeling</span><span class="proj-tag">Data Validation</span><span class="proj-tag">Analytics Engineering</span>
+        </div>
+      </div>
+      <div class="proj-links">
+        <a href="https://github.com/tejas-jaggi/customer-revenue-analytics" target="_blank" class="proj-link">⬡ GitHub</a>
+      </div>
+    </div>
+
+    <!-- ── FLAGSHIP 02: SOLSTICE INTELLIGENCE ── -->
+    <div class="project-card reveal">
+      <div class="proj-wm">02</div>
+      <div class="proj-body">
+        <div class="proj-meta">
+          <span class="proj-meta-num">02</span>
+          <span class="proj-meta-sep">—</span>
+          Generative AI · Natural-Language Analytics · Software Engineering
+        </div>
+        <div class="proj-title">Solstice Intelligence — Natural-Language Analytics Assistant</div>
+        <div class="proj-domain">🛡️ Governed LLM-to-SQL · Validation-First Architecture · DuckDB</div>
+        <div class="proj-metric">76+ automated tests · 8 architecture decision records · adversarial exploit found &amp; fixed</div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Business Problem</span>
+          <p>Business users have questions and the data exists — but getting an answer means waiting on an analyst to write SQL. That queue is slow and expensive for questions that should take seconds.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Solution</span>
+          <p>A governed assistant that takes a question in plain English and returns a validated answer from a dimensional warehouse, showing the exact SQL it ran. The governing principle: the LLM reasons, the warehouse provides truth, and a validation layer decides trust — the model never touches the database directly.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Engineering Decisions</span>
+          <p>Chose an allowlist-first validation model over a denylist, because a denylist can never enumerate every dangerous function — an allowlist is a positive guarantee that only real warehouse tables are reachable. Used sqlglot AST parsing rather than string matching so obfuscated or nested threats can't slip through. Kept the LLM behind a client protocol so the security-critical layers stay deterministic and fully testable.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Architecture</span>
+          <p>Six typed, independently-tested layers. A natural-language question is grounded in the live schema, an LLM proposes a candidate query via tool-calling, and every query passes a validation gate before a read-only executor runs it against the validated warehouse.</p>
+        </div>
+        <img src="assets/images/solstice_architecture.svg"
+             alt="Solstice Intelligence trust pipeline architecture"
+             class="proj-img">
+
+        <div class="proj-block">
+          <span class="proj-block-label">Technical Implementation</span>
+        </div>
+        <ul class="proj-highlights">
+          <li>Built an allowlist-first validation gate using sqlglot AST parsing: every referenced table must resolve to a real warehouse object, non-SELECT statements are rejected, and queries are read-only by construction.</li>
+          <li>Hardened the gate after adversarial testing exposed a file-disclosure exploit (a crafted query could read local files) — the fix rejects table functions structurally, not by string matching.</li>
+          <li>Isolated the LLM behind a client protocol so the full pipeline is deterministically testable with a fake client and zero network calls.</li>
+          <li>Enforced a typed trust boundary (ApprovedQuery) so the executor can only run gate-approved SQL, with an independent row-cap backstop.</li>
+        </ul>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Validation &amp; Evidence</span>
+          <p>A comprehensive automated test suite covering every layer (schema, metadata, validation gate, execution, orchestration, formatting), a live end-to-end smoke test against the OpenAI Responses API, and 8 Architecture Decision Records documenting every major engineering choice.</p>
+        </div>
+        <!-- SCREENSHOT PLACEHOLDER: replace with real captures -->
+        <div class="img-grid">
+          <img src="assets/images/solstice_tests.png" alt="76 passing tests" class="proj-img">
+          <img src="assets/images/solstice_smoke_test.png" alt="Live smoke test output" class="proj-img">
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Business Impact</span>
+          <p>Turns a multi-day analyst request into a self-service question, while keeping the trust guarantees a regulated business needs: answers are always warehouse-computed, every query is shown, and unsafe requests are refused rather than guessed.</p>
+        </div>
+
+        <div class="proj-stack">
+          <span class="proj-tag">Python</span><span class="proj-tag">OpenAI Responses API</span><span class="proj-tag">DuckDB</span><span class="proj-tag">sqlglot</span><span class="proj-tag">Pydantic</span><span class="proj-tag">pytest</span><span class="proj-tag">AST Validation</span>
+        </div>
+      </div>
+      <div class="proj-links">
+        <a href="https://github.com/tejas-jaggi/solstice-intelligence" target="_blank" class="proj-link">⬡ GitHub</a>
+      </div>
+    </div>
+
+    <!-- ── FLAGSHIP 03: RL PRICING AGENT ── -->
+    <div class="project-card reveal">
+      <div class="proj-wm">03</div>
+      <div class="proj-body">
+        <div class="proj-meta">
+          <span class="proj-meta-num">03</span>
+          <span class="proj-meta-sep">—</span>
+          Reinforcement Learning · Market Simulation · Applied ML
         </div>
         <div class="proj-title">RL Pricing Agent &amp; Market Simulator</div>
         <div class="proj-domain">🤖 Reinforcement Learning · Dynamic Pricing · Retail Analytics</div>
         <div class="proj-metric">46.8% revenue pool captured vs 33.3% equal-share benchmark · 5/5 market scenarios won</div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Business Problem</span>
+          <p>Setting prices in a competitive market is a moving target: competitors react, demand shifts, and static rules leave money on the table. The question is whether a learning agent can price better than a hand-tuned expert strategy — reliably, not just occasionally.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Solution</span>
+          <p>An end-to-end reinforcement learning system that trains a PPO agent to price dynamically inside a simulated competitive retail market calibrated on real transaction data, then rigorously benchmarks it against expert strategies across market shocks.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Engineering Decisions</span>
+          <p>Chose PPO for stability in a continuous, non-stationary pricing environment, and validated across five random seeds rather than a single run — because a single-seed RL result is noise, not evidence. Built the shock engine to modify structural demand parameters rather than apply arbitrary multipliers, so market disruptions are economically meaningful and the results defensible.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Architecture</span>
+          <p>A calibrated OLS demand model feeds a custom OpenAI Gymnasium environment with a composable shock engine and five competitor archetypes; a PPO agent trains against them, with a validation suite run before every training cycle.</p>
+        </div>
         <img src="assets/images/rl_market_simulator.svg"
-             alt="RL Market Simulator Dashboard"
+             alt="RL Market Simulator"
              class="proj-img">
-        <p class="proj-desc">End-to-end reinforcement learning system trained to dynamically price products in a simulated competitive retail market. Calibrated on 26,342 real retail transactions, the PPO agent competes against 5 distinct competitor archetypes across 5 market shock scenarios — outperforming an expert-designed benchmark in all conditions with profit lifts of +8% to +79%.</p>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Technical Implementation</span>
+        </div>
         <ul class="proj-highlights">
           <li>Cleaned and processed 26,342 real retail transactions to fit a calibrated OLS demand model (R²=0.516), producing 13 publication-ready validation figures.</li>
-          <li>Built a custom OpenAI Gymnasium environment with a composable Shock Engine that injects 5 market disruption types (inflation, recession, demand surge, stagflation) by modifying structural demand parameters not arbitrary multipliers.</li>
-          <li>Trained a PPO agent over 600,000 simulation steps across 5 random seeds; agent wins 5/5 market scenarios and captures 46.8% of the revenue pool vs. a 33.3% equal-share benchmark.</li>
-          <li>Introduced a price-stability penalty (λ=2,500) that reduces price volatility by 90.8% while simultaneously improving profit by 2.1% addressing a key barrier for real-world e-commerce deployment.</li>
-          <li>Benchmarked against 5 competitor archetypes across 25 head-to-head matchups; agent beats 4/5 archetypes with structured analysis of the Undercutter boundary condition.</li>
+          <li>Built a custom OpenAI Gymnasium environment with a composable Shock Engine injecting 5 market disruption types (inflation, recession, demand surge, stagflation) via structural demand parameters — not arbitrary multipliers.</li>
+          <li>Trained a PPO agent over 600,000 simulation steps across 5 random seeds; the agent wins 5/5 market scenarios and captures 46.8% of the revenue pool vs. a 33.3% equal-share benchmark.</li>
+          <li>Introduced a price-stability penalty (λ=2,500) that reduces price volatility by 90.8% while improving profit by 2.1% — addressing a key barrier to real-world e-commerce deployment.</li>
         </ul>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Validation &amp; Evidence</span>
+          <p>Benchmarked against 5 competitor archetypes across 25 head-to-head matchups with multi-seed validation; profit lifts of +8% to +79% over an expert-designed benchmark across all market conditions.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Business Impact</span>
+          <p>Demonstrates that a learning agent can outperform a hand-tuned expert pricing strategy while controlling price volatility — the exact combination a real e-commerce team would need before trusting automated pricing.</p>
+        </div>
+
         <div class="proj-stack">
-          <span class="proj-tag">Python</span><span class="proj-tag">PPO</span><span class="proj-tag">Stable-Baselines3</span><span class="proj-tag">OpenAI Gymnasium</span><span class="proj-tag">Pandas</span><span class="proj-tag">NumPy</span><span class="proj-tag">Scikit-learn</span><span class="proj-tag">Matplotlib</span>
+          <span class="proj-tag">Python</span><span class="proj-tag">PPO</span><span class="proj-tag">Stable-Baselines3</span><span class="proj-tag">OpenAI Gymnasium</span><span class="proj-tag">Scikit-learn</span><span class="proj-tag">Pandas</span><span class="proj-tag">NumPy</span>
         </div>
       </div>
       <div class="proj-links">
@@ -1097,137 +1304,117 @@
       </div>
     </div>
 
-    <!-- ── PROJECT 02: SUPPLIER RISK ── -->
-    <div class="project-card reveal d1">
-      <div class="proj-wm">02</div>
-      <div class="proj-body">
-        <div class="proj-meta">
-          <span class="proj-meta-num">02</span>
-          <span class="proj-meta-sep">—</span>
-          Procurement · Supply Chain · ML
-        </div>
-        <div class="proj-title">Supplier Risk &amp; Cost Escalation Intelligence Platform</div>
-        <div class="proj-domain">📦 Supply Chain Analytics · Risk Modeling</div>
-        <div class="proj-metric">XGBoost composite risk scores across 4 tiers: Critical → High → Medium → Low</div>
-        <img src="assets/images/supplier_dashboard.png"
-             alt="Supplier Risk Dashboard"
-             class="proj-img">
-        <p class="proj-desc">Machine learning system that analyzes supplier transaction data to predict delivery delays, cancellations, and profit volatility. Combines these risks into a composite supplier risk score and visualizes results in an interactive procurement analytics dashboard.</p>
-        <ul class="proj-highlights">
-          <li>Engineered supplier-level performance features (late delivery rate, cancellation rate, margin variability) from raw transaction data using Python, Pandas, and SQL.</li>
-          <li>Trained XGBoost models to estimate late delivery risk, cancellation risk, and profit margin instability, then combined predictions into a weighted composite supplier risk score.</li>
-          <li>Translated model outputs into interpretable supplier risk tiers (Critical / High / Medium / Low) to support procurement prioritization and risk monitoring.</li>
-          <li>Built an interactive Streamlit dashboard displaying supplier risk rankings, KPI summaries, department-level risk heatmaps, and risk distribution analytics.</li>
-          <li>Analyzed supplier performance patterns to identify high-risk vendors and operational risk drivers across departments.</li>
-        </ul>
-        <div class="proj-stack">
-          <span class="proj-tag">Python</span><span class="proj-tag">XGBoost</span><span class="proj-tag">Scikit-learn</span><span class="proj-tag">Pandas</span><span class="proj-tag">SQL</span><span class="proj-tag">Streamlit</span><span class="proj-tag">Feature Engineering</span>
-        </div>
-      </div>
-      <div class="proj-links">
-        <a href="https://github.com/tejas-jaggi/supplier-risk-intelligence-platform" target="_blank" class="proj-link">⬡ GitHub</a>
-        <a href="https://supplier-risk-intelligence.streamlit.app/" target="_blank" class="proj-link">⬡ Live Demo</a>
-      </div>
-    </div>
-
-    <!-- ── PROJECT 03: F1 DASHBOARD ── -->
-    <div class="project-card reveal d2">
-      <div class="proj-wm">03</div>
-      <div class="proj-body">
-        <div class="proj-meta">
-          <span class="proj-meta-num">03</span>
-          <span class="proj-meta-sep">—</span>
-          Data Analytics · Business Intelligence · 30+ Visuals
-        </div>
-        <div class="proj-title">F1 World Championship Dashboard (1950–2024)</div>
-        <div class="proj-domain">🏎️ Formula 1 Analytics · Star Schema · 75 Years of Data</div>
-        <div class="proj-metric">75 years · 1,125 races · 861 drivers · 6 interactive pages · 20+ DAX measures</div>
-        <img src="assets/images/f1_dashboard_preview.png"
-             alt="F1 World Championship Dashboard"
-             class="proj-img">
-        <p class="proj-desc">Interactive 6-page Power BI dashboard analyzing 75 years of Formula 1 data (1950–2024). Built on the Ergast dataset's 14 CSV files — 1,125 races, 861 drivers, 212 constructors, 77 circuits — modeled as a star schema with 11 tables, 20+ DAX measures, and six thematically distinct pages covering every dimension of the sport's history.</p>
-        <ul class="proj-highlights">
-          <li>Built a star schema with 11 interconnected tables (~25,000-row results fact table + dimension tables) and authored 20+ DAX measures including CALCULATE, DIVIDE, MAXX, ALLSELECTED, SWITCH, and time-intelligence functions.</li>
-          <li>Home Overview: 6 KPI headline cards, top-10 driver and constructor bar charts, and a races-per-season trend line spanning 1950–2024 — showing F1's calendar growth from 8 to 24 races per year.</li>
-          <li>Driver Analysis: per-driver career filter with wins/points by season, grid-vs-finish scatter plot, and an all-time statistics table (top 25). Hamilton leads at 32.21% win rate, Senna at 37.76%.</li>
-          <li>Race Strategy: grid-position win-rate chart (481 wins from P1), pit-stop duration trends 2011–2024, top DNF causes (Engine: 2,026 occurrences), and DNF rate drop from 50%+ in the 1950s to 12.67% in the 2020s.</li>
-          <li>Championship Story: season title battle by round (top-5 driver line chart) and a 75-year season-wins heatmap visualizing every driver's yearly win count from 1950 to 2024.</li>
-        </ul>
-        <div class="proj-stack">
-          <span class="proj-tag">Power BI</span><span class="proj-tag">DAX</span><span class="proj-tag">Power Query (M)</span><span class="proj-tag">Star Schema</span><span class="proj-tag">Data Modeling</span><span class="proj-tag">ETL Pipeline</span><span class="proj-tag">Interactive Dashboards</span>
-        </div>
-      </div>
-      <div class="proj-links">
-        <a href="https://github.com/tejas-jaggi/F1-PowerBI-Dashboard" target="_blank" class="proj-link">⬡ GitHub</a>
-        <a href="https://github.com/tejas-jaggi/F1-PowerBI-Dashboard/raw/main/F1_World_Championship_Dashboard.pbix" download target="_blank" class="proj-link">⬡ Download .pbix</a>
-      </div>
-    </div>
-
-    <!-- ── PROJECT 04: SATELLITE ── -->
-    <div class="project-card reveal d3">
+    <!-- ── FLAGSHIP 04: LVMH GREY MARKET INTELLIGENCE ── -->
+    <div class="project-card reveal">
       <div class="proj-wm">04</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-meta-num">04</span>
           <span class="proj-meta-sep">—</span>
-          Data Engineering · Analytics · ML
+          Deployed Product · Anomaly Detection · Competitive Intelligence
         </div>
-        <div class="proj-title">Satellite Collision Risk Intelligence Platform</div>
-        <div class="proj-domain">🛰️ Space Analytics · Risk Intelligence</div>
-        <div class="proj-metric">35,000+ orbital objects processed · Real CelesTrak data · Mirrors actual Space Traffic Management systems</div>
-        <img src="assets/images/satellite_dashboard.png"
-             alt="Satellite Collision Dashboard"
-             class="proj-img">
-        <p class="proj-desc">A full end-to-end data engineering and ML platform that ingests real satellite orbital data from CelesTrak (used by NASA &amp; ESA), engineers collision-risk features from orbital mechanics, trains a risk prediction model, and serves results through an interactive dashboard — mirroring actual Space Traffic Management systems.</p>
+        <div class="proj-title">LVMH Grey Market Intelligence</div>
+        <div class="proj-domain">🌐 Deployed Web App · Explainable Anomaly Detection · Full-Stack</div>
+        <div class="proj-metric">Live Flask application · Isolation Forest anomaly scoring · evidence-backed risk flags</div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Business Problem</span>
+          <p>Luxury brands lose control of pricing and positioning when products leak into grey-market channels. Brand-protection teams need to spot suspicious distributor activity early — and understand <em>why</em> a listing was flagged, not just that it was.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Solution</span>
+          <p>A deployed competitive-intelligence web application that scans marketplace listings, scores distributor diversion risk with an anomaly model, and surfaces an evidence trail explaining every flag.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Engineering Decisions</span>
+          <p>Chose Isolation Forest for anomaly detection because grey-market diversion is an unlabeled problem — there's no clean "fraud" ground truth to train a classifier on, so unsupervised anomaly scoring fits the data that actually exists. Prioritized explainability (evidence trails) over raw model complexity, because a risk score no one can justify is a score no brand-protection team will act on.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Architecture</span>
+          <p>A full-stack Flask application with SQLite persistence, an Isolation Forest scoring layer, scan-history tracking, and a what-if analytics simulator — deployed live so it can be used, not just demoed.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Technical Implementation</span>
+        </div>
         <ul class="proj-highlights">
-          <li>Built a Python ETL pipeline that ingests real orbital element data from the CelesTrak API, parses TLE fields, and loads 9,000+ satellites and 25,000+ debris objects into a normalized SQLite database.</li>
-          <li>Computed altitude and velocity from orbital mechanics (mean motion → orbital period → altitude) and engineered collision-risk features from scratch.</li>
-          <li>Trained an XGBoost classifier to estimate collision risk probability for satellites based on orbital density, debris proximity, and altitude-band characteristics.</li>
-          <li>Deployed an interactive Streamlit dashboard visualizing satellite risk scores, orbital congestion patterns, and high-risk altitude zones.</li>
-          <li>Analyzed ~35,000 orbital objects and identified high-density altitude bands in Low Earth Orbit where collision risk is concentrated.</li>
+          <li>Built and deployed a live Flask web application that scans marketplace listings and scores distributor diversion risk with an Isolation Forest anomaly model.</li>
+          <li>Engineered the full stack — Flask API, SQLite persistence, scan-history tracking, and a what-if analytics simulator.</li>
+          <li>Surfaced evidence trails explaining why each listing was flagged, turning an anomaly score into an actionable, defensible signal.</li>
         </ul>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Validation &amp; Evidence</span>
+          <p>Deployed and operational as a live application with persisted scan history, so the anomaly scoring and evidence trails can be exercised end-to-end rather than only demonstrated in a notebook.</p>
+        </div>
+        <!-- SCREENSHOT PLACEHOLDER: live app + flagged listing evidence trail -->
+        <div class="img-grid">
+          <img src="assets/images/lvmh_app.png" alt="LVMH grey market app" class="proj-img">
+          <img src="assets/images/lvmh_evidence.png" alt="Evidence trail for a flagged listing" class="proj-img">
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Business Impact</span>
+          <p>Gives brand-protection stakeholders an operating view of diversion exposure — early, explainable signals they can act on, rather than a black-box score.</p>
+        </div>
+
         <div class="proj-stack">
-          <span class="proj-tag">Python</span><span class="proj-tag">SQLite</span><span class="proj-tag">CelesTrak API</span><span class="proj-tag">Orbital Mechanics</span><span class="proj-tag">XGBoost</span><span class="proj-tag">Streamlit</span><span class="proj-tag">ETL Pipeline</span>
+          <span class="proj-tag">Python</span><span class="proj-tag">Flask</span><span class="proj-tag">Isolation Forest</span><span class="proj-tag">SQLite</span><span class="proj-tag">Scikit-learn</span><span class="proj-tag">Explainable AI</span>
         </div>
       </div>
       <div class="proj-links">
-        <a href="https://github.com/tejas-jaggi/satellite-collision-risk-intelligence" target="_blank" class="proj-link">⬡ GitHub</a>
-        <a href="https://satellite-collision-risk.streamlit.app/" target="_blank" class="proj-link">⬡ Live Demo</a>
+        <a href="https://github.com/tejas-jaggi/lvmh-grey-market-intelligence" target="_blank" class="proj-link">⬡ GitHub</a>
+        <a href="https://lvmh-grey-market-intelligence.onrender.com" target="_blank" class="proj-link">⬡ Live Demo</a>
       </div>
     </div>
 
-    <!-- ── PROJECT 05: CRUDE OIL ── -->
-    <div class="project-card reveal">
-      <div class="proj-wm">05</div>
+
+    <!-- ── divider before additional project ── -->
+    <div class="additional-divider reveal"><span>Additional Project · Visualization</span></div>
+
+    <!-- ── ADDITIONAL PROJECT: F1 DASHBOARD (visualization showcase) ── -->
+    <div class="project-card reveal additional-project">
+      <div class="proj-wm">+</div>
       <div class="proj-body">
         <div class="proj-meta">
-          <span class="proj-meta-num">05</span>
+          <span class="proj-meta-num">＋</span>
           <span class="proj-meta-sep">—</span>
-          Data Warehousing &amp; BI · ETL Pipeline · Dashboard Design
+          Business Intelligence · Data Visualization · Power BI
         </div>
-        <div class="proj-title">Global Crude Oil Price Analytics (1970–2026)</div>
-        <div class="proj-domain">📊 Power BI · Power Query · DAX · Time-Series Analysis · DWBI</div>
-        <div class="proj-metric">56 years · 676 data points · 15 DAX measures · 4 interactive dashboards</div>
-        <img src="assets/images/crude_oil_preview.png"
-             alt="Global Crude Oil Analytics — All 4 Dashboards"
-             class="proj-img">
-        <p class="proj-desc">End-to-end business intelligence project analyzing 56 years of monthly Brent crude oil prices across 676 data points. Built a complete ETL pipeline in Power Query, authored 15 DAX measures, and designed 4 interactive dashboards — enabling anyone to explore one of the most consequential commodity datasets in global economic history without any prior knowledge of energy markets.</p>
+        <div class="proj-title">Formula 1 Analytics Dashboard</div>
+        <div class="proj-domain">🏎️ Power BI · Star Schema · 75 Years of Race Data</div>
+        <div class="proj-metric">6 interactive pages · 20+ DAX measures · 1950–2024 season coverage</div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Overview</span>
+          <p>An interactive 6-page Power BI dashboard analyzing 75 years of Formula 1 history, included as a focused showcase of BI and data-visualization skills alongside the systems-focused projects above.</p>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-label">Highlights</span>
+        </div>
         <ul class="proj-highlights">
-          <li>Engineered a full ETL pipeline in Power Query: standardized date types, derived 8 calculated columns (Decade, Price Era, Crisis Period flags, Quarter labels, YoY % change) and structured the model as a star schema with a dedicated DateTable enabling all time-intelligence DAX functions.</li>
-          <li>Authored 15 DAX measures including rolling 12M/3M averages, year-over-year % change, P25/P75 price spread, price standard deviation, seasonal index, and peak drawdown powering multi-dimensional analysis across all 4 dashboards from a single semantic model.</li>
-          <li>Dashboard 2 — Volatility &amp; Shocks: conditional-formatted YoY % column chart revealing +211% in 1974 and -47% in 1986 as the most extreme years; supported by a rolling-average convergence chart and a heat-colored shock magnitude table.</li>
-          <li>Dashboard 3 — Decade DNA: horizontal bar chart with warm-to-red color progression showing escalating decade averages ($9.70 in 1970s → $76.45 in 2010s); scatter plot mapping price level vs volatility reveals the 2000s/2010s as uniquely high-price AND high-volatility.</li>
-          <li>Dashboard 4 — Seasonal Pulse: 56×12 matrix heatmap (blue → red gradient) visualizes the entire post-2000 price regime shift at a glance; average-by-month line chart identifies July/June as peak seasonal months.</li>
+          <li>Modeled the Ergast dataset (races, drivers, constructors, circuits) as a star schema with 20+ DAX measures.</li>
+          <li>Built six thematically distinct, fully interactive pages covering drivers, constructors, races, and championship history.</li>
+          <li>Designed for exploration — dynamic filtering, drill-through, and KPI cards emphasizing usability and storytelling.</li>
         </ul>
+
+        <img src="assets/images/f1_dashboard_preview.png"
+             alt="Formula 1 Power BI dashboard"
+             class="proj-img">
+
         <div class="proj-stack">
-          <span class="proj-tag">Power BI</span><span class="proj-tag">Power Query (M)</span><span class="proj-tag">DAX</span><span class="proj-tag">ETL Pipeline</span><span class="proj-tag">Star Schema</span><span class="proj-tag">Time-Series Analysis</span><span class="proj-tag">Conditional Formatting</span><span class="proj-tag">Interactive Dashboards</span><span class="proj-tag">Data Modeling</span>
+          <span class="proj-tag">Power BI</span><span class="proj-tag">DAX</span><span class="proj-tag">Star Schema</span><span class="proj-tag">Data Modeling</span><span class="proj-tag">Data Visualization</span>
         </div>
       </div>
       <div class="proj-links">
-        <a href="https://github.com/tejas-jaggi/crude-oil-analytics" target="_blank" class="proj-link">⬡ GitHub</a>
-        <a href="https://github.com/tejas-jaggi/crude-oil-analytics/raw/main/Crude_Oil_Analytics.pbix" download target="_blank" class="proj-link">⬡ Download .pbix</a>
+        <a href="https://github.com/tejas-jaggi/F1-PowerBI-Dashboard" target="_blank" class="proj-link">⬡ GitHub</a>
       </div>
     </div>
+
 
   </div>
 </section>
@@ -1239,7 +1426,7 @@
   <div class="contact-wrap">
     <div class="contact-block reveal">
       <p class="contact-text">
-        I'm targeting <strong>full-time roles in ML engineering, data science, and data analytics.</strong> Graduating from UIUC in May 2027. If you're hiring, building something interesting, or just want to talk data, reach out.
+        I'm looking for <strong>roles in AI engineering, data science, and analytics engineering</strong> where I can build systems that turn data into better decisions — across technology, financial services, insurance, healthcare, consulting, and beyond. What matters most to me is meaningful business problems, not a particular kind of company. Graduating from UIUC in May 2027. If you're hiring, building something interesting, or just want to talk data, reach out.
       </p>
       <div class="contact-links">
         <a href="mailto:jaggitejas4@gmail.com" class="c-link">
@@ -1249,7 +1436,7 @@
           </svg>
           jaggitejas4@gmail.com
         </a>
-        <a href="https://www.linkedin.com/in/tejas-jaggi-a55134221" target="_blank" class="c-link">
+        <a href="https://www.linkedin.com/in/tejas-jaggi" target="_blank" class="c-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
             <rect x="2" y="9" width="4" height="12"/>
